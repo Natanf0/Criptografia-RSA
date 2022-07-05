@@ -2,19 +2,32 @@
 // DRE: 120027447
 
 #include<stdio.h>
-#include<stdbool.h>
+#include<stdlib.h>
+#include<time.h>
 
 int main(){
-	int x;
-	scanf("%d",&x);
-	printf("%d",verifica_primo(x));
+	gera_p_q(32);
 	return 0 ;
 }
 
 // Trabalho Final - semana 1:
 int gera_p_q(int b){
-	int vet[2];
-	
+	int vet[2]; // vetor que vai armazenar P e Q ;
+	int p, q;
+	srand(time(NULL));
+	p=rand();
+	q=rand();
+	while(1){
+		if(verifica_primo(p)&&verifica_primo(q)){
+			vet[0]=p;
+			vet[1]=q;
+			printf("%d %d",vet[0],vet[1]);
+			break;
+		}else{
+			p=rand();
+			q=rand();
+		}
+	}
 	return 0;
 	
 }
