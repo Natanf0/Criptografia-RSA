@@ -1,20 +1,19 @@
 // Aluno: Natan da Silveira Ferreira
 // DRE: 120027447
-
+// https://github.com/Natanf0/Criptografia-RSA
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<time.h>
 #include<math.h>
 // A FUNÇÃO MAIN ESTÁ ABAIXO (as funções que retornam um 
-//ponteiro/vetor precisam estar acima da main)
-
+// ponteiro/vetor precisam estar acima da main)
 
 // Trabalho Final - semana 1:
-int* gera_p_q(){
+int* gera_p_q(int b){
 	
-	int p = gera(30); // 30 bits é o máximo que gera 
-	int q = gera(30);
+	int p = gera(b); // 30 bits é o máximo que gera 
+	int q = gera(b); 
 	int v[2];
 	v[0] = p ; v[1] = q;
 	return v;
@@ -50,15 +49,16 @@ int* interpreta_texto(char string[]){
 	return vetor;
 }
 
+
 // MAIN:
 int main(){
+	printf("interpreta_texto para a string natan:\n");
 	int *v=interpreta_texto("natan");
-	printf("%d\n%d\n%d",v[0],v[1],v[2]);
-	//int *p= gera_p_q();
-	//printf("%d %d",p[0],p[1]);
+	printf("%d %d %d %d %d\n",v[0],v[1],v[2],v[3],v[4]);
+	int *p=gera_p_q(30); //30 bits é o máximo
+	printf("p = %d\nq = %d",p[0],p[1]);
 	return 0 ;
 }
-
 int mdc(int g, int q){
 	int resto;
 	while(q!=0){
@@ -68,9 +68,7 @@ int mdc(int g, int q){
 	}
 	return g;
 }
-
 // Trabalho Final - semana 2:
-
 int numero_div(int n){
 	// Função auxiliar 
 	int cont=0, i=1;
@@ -93,20 +91,11 @@ int verifica_primo(int j){
 		}
 	
 }
-
-
-
-
-
 // Trabalho Final - semana 3:
-
 int inverso_modular(int e, int n){
 	
 	return 0;
 }
-
-
-
-
-
 // Trabalho Final - semana 4:
+
+
